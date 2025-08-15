@@ -31,11 +31,9 @@
             </div>
         </section>
         
-        <section id="produtos" class="container">
-            <h1>Produtos em Destaque</h1>
             <div class="produtos-grid destaque-grid">
                 <div class="produto-card">
-                    <img src="logo.png" alt="Pão Francês" class="produto-img">
+                    <img src="./assets/paofrances.png" alt="Pão Francês" class="produto-img">
                     <h3>Pão Francês</h3>
                     <p class="preco">R$ 0,80</p>
                     <p class="descricao">Pão francês tradicional, crocante por fora e macio por dentro</p>
@@ -47,7 +45,7 @@
                     <button class="btn-adicionar" onclick="adicionarAoCarrinho('Pão Francês', 0.80, this)">Adicionar ao Carrinho</button>
                 </div>
                 <div class="produto-card">
-                    <img src="logo.png" alt="Sonho de Padaria" class="produto-img">
+                    <img src="./assets/sonho.png" alt="Sonho de Padaria" class="produto-img">
                     <h3>Sonho de Padaria</h3>
                     <p class="preco">R$ 4,50</p>
                     <p class="descricao">Delicioso sonho recheado com doce de leite cremoso</p>
@@ -59,7 +57,7 @@
                     <button class="btn-adicionar" onclick="adicionarAoCarrinho('Sonho de Padaria', 4.50, this)">Adicionar ao Carrinho</button>
                 </div>
                 <div class="produto-card">
-                    <img src="logo.png" alt="Baguete" class="produto-img">
+                    <img src="./assets/baguete.png" alt="Baguete" class="produto-img">
                     <h3>Baguete</h3>
                     <p class="preco">R$ 3,00</p>
                     <p class="descricao">Baguete francesa artesanal com crosta dourada</p>
@@ -71,7 +69,7 @@
                     <button class="btn-adicionar" onclick="adicionarAoCarrinho('Baguete', 3.00, this)">Adicionar ao Carrinho</button>
                 </div>
                 <div class="produto-card">
-                    <img src="logo.png" alt="Croissant" class="produto-img">
+                    <img src="./assets/croissant.png" alt="Croissant" class="produto-img">
                     <h3>Croissant</h3>
                     <p class="preco">R$ 5,00</p>
                     <p class="descricao">Croissant folhado amanteigado, perfeito para o café da manhã</p>
@@ -83,7 +81,7 @@
                     <button class="btn-adicionar" onclick="adicionarAoCarrinho('Croissant', 5.00, this)">Adicionar ao Carrinho</button>
                 </div>
                 <div class="produto-card">
-                    <img src="logo.png" alt="Pão de Açúcar" class="produto-img">
+                    <img src="./assets/pao.png" alt="Pão de Açúcar" class="produto-img">
                     <h3>Pão de Açúcar</h3>
                     <p class="preco">R$ 2,50</p>
                     <p class="descricao">Pão doce tradicional com cobertura de açúcar cristal</p>
@@ -95,7 +93,7 @@
                     <button class="btn-adicionar" onclick="adicionarAoCarrinho('Pão de Açúcar', 2.50, this)">Adicionar ao Carrinho</button>
                 </div>
                 <div class="produto-card">
-                    <img src="logo.png" alt="Brigadeiro" class="produto-img">
+                    <img src="./assets/brigadeiro.png" alt="Brigadeiro" class="produto-img">
                     <h3>Brigadeiro</h3>
                     <p class="preco">R$ 3,50</p>
                     <p class="descricao">Brigadeiro gourmet com chocolate belga e granulado</p>
@@ -133,33 +131,6 @@
     <!-- Notificação -->
     <div id="notificacao" class="notificacao"></div>
     <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <style>
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0; top: 0; width: 100vw; height: 100vh;
-        background: rgba(0,0,0,0.25);
-        align-items: center;
-        justify-content: center;
-    }
-    .modal[style*="display: block"] {
-        display: flex !important;
-    }
-    .modal-content {
-        background: #fff;
-        border-radius: 16px;
-        max-width: 400px;
-        margin: auto;
-        padding: 32px 24px 24px 24px;
-        box-shadow: 0 4px 32px rgba(0,0,0,0.18);
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-    }
-    </style>
 </body>
 </html>
 
