@@ -58,7 +58,7 @@ function esc($value) {
             while ($row = $result->fetch_assoc()) {
                 $itens = buscarItensPedido($conn, $row['idPedido']);
                 $numItens = count($itens);
-                // Calcular o total antes de imprimir as linhas
+
                 $total = 0;
                 foreach ($itens as $item) {
                     $total += $item['preco'] * $item['quantidade'];
