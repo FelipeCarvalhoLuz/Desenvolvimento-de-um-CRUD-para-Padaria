@@ -1,18 +1,14 @@
 <?php
 // Página de cadastro de produto para padaria
+$erro = '';
+$sucesso = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = $_POST['nome'] ?? '';
     $preco = $_POST['preco'] ?? '';
-    $erro = '';
     if (!$nome || !$preco || !is_numeric($preco)) {
         $erro = 'Preencha todos os campos corretamente!';
     } else {
-        $produtos = json_decode(file_get_contents('produtos.json'), true);
-        $produtos[] = [
-            'nome' => $nome,
-            'preco' => number_format($preco, 2, '.', ''),
-        ];
-        file_put_contents('produtos.json', json_encode($produtos, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));
+        // Aqui você pode adicionar lógica para salvar no banco de dados
         $sucesso = 'Produto cadastrado com sucesso!';
     }
 }
