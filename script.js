@@ -1,4 +1,3 @@
-// Carrinho funcional e fluido
 function atualizarCarrinhoVisual() {
     const carrinho = JSON.parse(localStorage.getItem('carrinho') || '[]');
     document.getElementById('carrinho-count').textContent = carrinho.reduce((s, item) => s + item.qtd, 0);
