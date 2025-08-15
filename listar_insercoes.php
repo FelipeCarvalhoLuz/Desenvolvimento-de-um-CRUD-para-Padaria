@@ -1,14 +1,11 @@
 <?php
-// Configuração da tabela a ser listada
-$tabela = 'pedidos'; // Altere para 'usuarios', 'clientes' ou 'produtos' conforme necessário
+$tabela = 'pedidos'; 
 
 require_once 'db.php';
 
-// Consulta SQL para buscar todos os pedidos
 $sql = "SELECT * FROM pedidos ORDER BY idPedido DESC";
 $result = $conn->query($sql);
 
-// Função para buscar os itens de um pedido
 function buscarItensPedido($conn, $pedido_id) {
     $itens = [];
     $sql = "SELECT produto, quantidade, preco FROM itens_pedido WHERE pedido_id = ?";
@@ -23,7 +20,6 @@ function buscarItensPedido($conn, $pedido_id) {
     return $itens;
 }
 
-// Função para escapar valores
 function esc($value) {
     return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
 }
@@ -61,30 +57,28 @@ function esc($value) {
             echo '</tr></thead><tbody>';
             while ($row = $result->fetch_assoc()) {
                 $itens = buscarItensPedido($conn, $row['idPedido']);
-                $total = 0;
                 $numItens = count($itens);
+
+                $total = 0;
+                foreach ($itens as $item) {
+                    $total += $item['preco'] * $item['quantidade'];
+                }
                 if ($numItens > 0) {
                     foreach ($itens as $idx => $item) {
-                        $subtotal = $item['preco'] * $item['quantidade'];
-                        $total += $subtotal;
                         echo '<tr>';
-                        // idPedido e dataPedido só na primeira linha do pedido
                         if ($idx === 0) {
                             echo '<td rowspan="' . $numItens . '">' . esc($row['idPedido']) . '</td>';
                             echo '<td rowspan="' . $numItens . '">' . esc($row['dataPedido']) . '</td>';
                         }
-                        // Produto, Qtd, Preço
                         echo '<td>' . esc($item['produto']) . '</td>';
                         echo '<td>' . esc($item['quantidade']) . '</td>';
                         echo '<td>R$ ' . number_format($item['preco'], 2, ',', '.') . '</td>';
-                        // Total só na primeira linha do pedido
                         if ($idx === 0) {
                             echo '<td rowspan="' . $numItens . '"><b>R$ ' . number_format($total, 2, ',', '.') . '</b></td>';
                         }
                         echo '</tr>';
                     }
                 } else {
-                    // Pedido sem itens
                     echo '<tr>';
                     echo '<td>' . esc($row['idPedido']) . '</td>';
                     echo '<td>' . esc($row['dataPedido']) . '</td>';
