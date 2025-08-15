@@ -61,12 +61,14 @@ function esc($value) {
             echo '</tr></thead><tbody>';
             while ($row = $result->fetch_assoc()) {
                 $itens = buscarItensPedido($conn, $row['idPedido']);
-                $total = 0;
                 $numItens = count($itens);
+                // Calcular o total antes de imprimir as linhas
+                $total = 0;
+                foreach ($itens as $item) {
+                    $total += $item['preco'] * $item['quantidade'];
+                }
                 if ($numItens > 0) {
                     foreach ($itens as $idx => $item) {
-                        $subtotal = $item['preco'] * $item['quantidade'];
-                        $total += $subtotal;
                         echo '<tr>';
                         // idPedido e dataPedido só na primeira linha do pedido
                         if ($idx === 0) {
