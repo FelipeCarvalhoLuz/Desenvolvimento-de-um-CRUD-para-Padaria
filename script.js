@@ -84,8 +84,11 @@ function finalizarPedido() {
             atualizarCarrinhoVisual();
             fecharCarrinho();
             mostrarNotificacao('Pedido realizado com sucesso!');
+            setTimeout(() => {
+                window.location.href = 'listar_insercoes.php';
+            }, 1200);
         } else {
-            mostrarNotificacao('Erro ao finalizar pedido: ' + (data.erro || '')); 
+            mostrarNotificacao('Erro ao finalizar pedido: ' + (data.erro || ''));
         }
     })
     .catch((e) => mostrarNotificacao('Erro ao conectar ao servidor!'));

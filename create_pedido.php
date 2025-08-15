@@ -12,7 +12,7 @@ if (!isset($data['itens']) || !is_array($data['itens']) || count($data['itens'])
 // Exemplo: salva o pedido na tabela 'pedidos' e os itens na tabela 'itens_pedido'
 try {
     $conn->begin_transaction();
-    $sql = "INSERT INTO pedidos (data_pedido) VALUES (NOW())";
+    $sql = "INSERT INTO pedidos (dataPedido) VALUES (NOW())";
     if (!$conn->query($sql)) throw new Exception('Erro ao criar pedido');
     $pedido_id = $conn->insert_id;
 

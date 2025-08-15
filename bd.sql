@@ -1,3 +1,11 @@
+CREATE TABLE itens_pedido (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    pedido_id INT,
+    produto VARCHAR(100),
+    preco DECIMAL(10,2),
+    quantidade INT,
+    FOREIGN KEY (pedido_id) REFERENCES pedidos(idPedido)
+);
 CREATE DATABASE PaoDango_Equipe8;
 
 USE PaoDango_Equipe8;
@@ -30,11 +38,9 @@ CREATE TABLE clientes (
 CREATE TABLE pedidos (
     idPedido INT PRIMARY KEY AUTO_INCREMENT,
     idCliente INT,
-    idProduto INT,
-    quantidade INT,
     dataPedido TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (idCliente) REFERENCES clientes(idUsuario),
-    FOREIGN KEY (idProduto) REFERENCES produtos(idProduto)
+    valorTotal DECIMAL(10,2) DEFAULT 0,
+    FOREIGN KEY (idCliente) REFERENCES clientes(idUsuario)
 );
 
 
