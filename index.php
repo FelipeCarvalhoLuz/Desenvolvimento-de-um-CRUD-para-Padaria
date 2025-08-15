@@ -110,7 +110,6 @@
         </section>
     </div>
 
-    <!-- Modal do Carrinho -->
     <div id="carrinho-modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -130,7 +129,6 @@
         </div>
     </div>
 
-    <!-- Notificação -->
     <div id="notificacao" class="notificacao"></div>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
