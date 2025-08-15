@@ -27,7 +27,7 @@
         <section id="produtos" class="container">
             <h1>Produtos em Destaque</h1>
             <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:24px; margin-top:32px;">
-                <!-- Exemplo de produto, substitua por loop PHP futuramente -->
+                
                 <div style="background:#fff8ec; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.06); padding:18px; text-align:center;">
                     <img src="logo.png" alt="Pão Francês" style="width:80px; margin-bottom:12px;">
                     <h3 style="color:#4e3c1e;">Pão Francês</h3>
@@ -46,10 +46,10 @@
                     <p style="color:#7a5c2e; font-size:1.1rem;">R$ 3,00 unidade</p>
                     <button class="btn-cadastro">Adicionar ao Carrinho</button>
                 </div>
-                <!-- Adicione mais produtos conforme necessário -->
+                
             </div>
         </section>
-        <!-- Espaço para carrinho e login futuramente -->
+      
     </div>
 </body>
 </html>
