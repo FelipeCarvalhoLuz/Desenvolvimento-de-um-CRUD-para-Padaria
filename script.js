@@ -67,8 +67,26 @@ function limparCarrinho() {
     abrirCarrinho();
 }
 function finalizarPedido() {
-    localStorage.removeItem('carrinho');
-    atualizarCarrinhoVisual();
-    fecharCarrinho();
-    mostrarNotificacao('Pedido realizado com sucesso!');
+    const carrinho = JSON.parse(localStorage.getItem('carrinho') || '[]');
+    if (carrinho.length === 0) {
+        mostrarNotificacao('Carrinho vazio!');
+        return;
+    }
+    fetch('create_pedido.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ itens: carrinho })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.sucesso) {
+            localStorage.removeItem('carrinho');
+            atualizarCarrinhoVisual();
+            fecharCarrinho();
+            mostrarNotificacao('Pedido realizado com sucesso!');
+        } else {
+            mostrarNotificacao('Erro ao finalizar pedido: ' + (data.erro || '')); 
+        }
+    })
+    .catch((e) => mostrarNotificacao('Erro ao conectar ao servidor!'));
 }

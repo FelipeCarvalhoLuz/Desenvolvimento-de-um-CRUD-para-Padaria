@@ -4,8 +4,8 @@ $tabela = 'produtos'; // Altere para 'usuarios', 'clientes' ou 'pedidos' conform
 
 require_once 'db.php';
 
-// Consulta SQL para buscar todos os registros ordenados por ID decrescente
-$sql = "SELECT * FROM `$tabela` ORDER BY id DESC";
+// Consulta SQL para buscar todos os registros
+$sql = "SELECT * FROM `$tabela`";
 $result = $conn->query($sql);
 
 // Função para escapar valores
