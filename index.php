@@ -18,6 +18,8 @@
                     <span>🛒</span>
                     <span id="carrinho-count">0</span>
                 </button>
+                <a href="#carrinho" style="color:#fff; text-decoration:none; font-weight:bold;">Carrinho</a>
+                <a href="listar_insercoes.php" style="color:#fff; text-decoration:none; font-weight:bold;">Ver Inserções</a>
                 <a href="#login" style="color:#fff; text-decoration:none; font-weight:bold;">Login</a>
             </div>
         </nav>

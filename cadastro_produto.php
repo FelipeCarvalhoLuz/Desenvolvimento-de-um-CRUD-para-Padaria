@@ -1,5 +1,5 @@
 <?php
-// Página de cadastro de produto para padaria
+include 'db.php';
 $erro = '';
 $sucesso = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -8,8 +8,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!$nome || !$preco || !is_numeric($preco)) {
         $erro = 'Preencha todos os campos corretamente!';
     } else {
-        // Aqui você pode adicionar lógica para salvar no banco de dados
-        $sucesso = 'Produto cadastrado com sucesso!';
+        $stmt = $conn->prepare("INSERT INTO produtos (nomeProduto, preçoProduto) VALUES (?, ?)");
+        $stmt->bind_param("sd", $nome, $preco);
+        if ($stmt->execute()) {
+            $sucesso = 'Produto cadastrado com sucesso!';
+        } else {
+            $erro = 'Erro ao cadastrar produto: ' . $conn->error;
+        }
+        $stmt->close();
     }
 }
 ?>
