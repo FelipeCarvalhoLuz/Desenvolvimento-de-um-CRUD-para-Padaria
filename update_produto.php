@@ -23,6 +23,7 @@ $row = $result->fetch_assoc();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atualizar Produto</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
     <form method="POST" action="update_produto.php?id=<?php echo $row['idProduto']; ?>">

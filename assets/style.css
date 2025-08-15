@@ -1,0 +1,129 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #fff8ec;
+    margin: 0;
+    padding: 0;
+}
+.main-bg {
+    min-height: 100vh;
+    background: linear-gradient(120deg, #fff8ec 60%, #f5e3c3 100%);
+}
+.navbar {
+    background: #4e3c1e;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 18px 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.logo-navbar {
+    height: 56px;
+    margin-right: 18px;
+}
+.navbar-title {
+    font-size: 2.1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #e2b04a;
+}
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    background: none;
+}
+.hero-content {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(78,60,30,0.08);
+    padding: 48px 36px;
+    text-align: center;
+}
+.hero-content h2 {
+    color: #4e3c1e;
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+}
+.hero-content p {
+    color: #7a5c2e;
+    font-size: 1.2rem;
+    margin-bottom: 32px;
+}
+.btn-cadastro {
+    background: #e2b04a;
+    color: #4e3c1e;
+    padding: 16px 36px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(78,60,30,0.08);
+    border: none;
+    display: inline-block;
+}
+.btn-cadastro:hover {
+    background: #c99a3a;
+    color: #fff;
+}
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+h1 {
+    color: #b8860b;
+    text-align: center;
+}
+form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+button {
+    background: #b8860b;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover {
+    background: #a0760b;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background: #f3e5ab;
+}
+.success {
+    color: green;
+    text-align: center;
+    margin-top: 10px;
+}
+.error {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}

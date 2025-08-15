@@ -1,5 +1,8 @@
 <?php
 include 'db.php';
+?>
+<link rel="stylesheet" href="assets/style.css">
+<?php
 $sql = "SELECT * FROM produtos";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {

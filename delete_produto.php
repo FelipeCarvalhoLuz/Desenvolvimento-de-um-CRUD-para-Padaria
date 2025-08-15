@@ -1,4 +1,7 @@
 <?php
+?>
+<link rel="stylesheet" href="assets/style.css">
+<?php
 include 'db.php';
 $id = $_GET['id'];
 $sql = "DELETE FROM produtos WHERE idProduto=$id";
