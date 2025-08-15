@@ -42,6 +42,7 @@ if (isset($_POST['remove_carrinho'])) {
                 <a href="index.php" style="color:#fff; text-decoration:none; font-weight:bold;">Home</a>
                 <a href="#produtos" style="color:#fff; text-decoration:none; font-weight:bold;">Produtos</a>
                 <a href="#carrinho" style="color:#fff; text-decoration:none; font-weight:bold;">Carrinho</a>
+                <a href="listar_insercoes.php" style="color:#fff; text-decoration:none; font-weight:bold;">Ver Inserções</a>
                 <a href="#login" style="color:#fff; text-decoration:none; font-weight:bold;">Login</a>
             </div>
         </nav>
